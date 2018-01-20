@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Text;
 using Timelapse.Domain;
 
 namespace Timelapse {
@@ -20,11 +19,11 @@ namespace Timelapse {
                     result.FontSize = size;
                     continue;
                 }
-                if (Enum.TryParse(part, out HorizontalPosition horizontal)) {
+                if (Enum.TryParse(part, true, out HorizontalPosition horizontal)) {
                     result.Horizontal = horizontal;
                     continue;
                 }
-                if (Enum.TryParse(part, out VertialPosition vertical)) {
+                if (Enum.TryParse(part, true, out VertialPosition vertical)) {
                     result.Vertical = vertical;
                     continue;
                 }
