@@ -59,7 +59,7 @@ namespace Timelapse {
                 if (DestinyFilenameWithLocalTime) {
                     var name = Path.GetFileNameWithoutExtension(result);
                     var ext = Path.GetExtension(result);
-                    result = $"{name}-{DateTime.Now:yyyYMMddHHmmss}.{ext}";
+                    result = $"{name}-{DateTime.Now:yyyyMMddHHmmss}{ext}";
                 }
 
                 return result;
