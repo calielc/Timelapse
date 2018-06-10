@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using Timelapse.Domain;
+using VideoTimeLapse.Domain;
 
-namespace Timelapse {
+namespace VideoTimeLapse {
     public sealed class CommandLineTextDrawArgs : ITextDrawArgs {
         public string FontFamily { get; set; } = "Tahome";
         public float FontSize { get; set; } = 8;

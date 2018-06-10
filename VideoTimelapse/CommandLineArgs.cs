@@ -2,14 +2,14 @@
 using System.IO;
 using Accord.Video.FFMPEG;
 using PowerArgs;
-using Timelapse.Domain;
+using VideoTimeLapse.Domain;
 
-namespace Timelapse {
+namespace VideoTimeLapse {
     public class CommandLineArgs : ITimelapseBuilderArgs {
         private string _destinyFolder;
         private string _destinyFilename;
 
-        public VideoCodec Codec { get; set; } = VideoCodec.H264;
+        public VideoCodec Codec { get; set; } = VideoCodec.Default;
 
         [ArgRange(1, 120)]
         public double? FrameRate { get; set; }

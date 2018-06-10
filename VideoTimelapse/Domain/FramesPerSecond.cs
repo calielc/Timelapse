@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using Accord.Math;
 
-namespace Timelapse.Domain {
+namespace VideoTimeLapse.Domain {
     public abstract class FramesPerSecond {
         [DebuggerDisplay("{Value}fps")]
         public sealed class Fixed : FramesPerSecond {

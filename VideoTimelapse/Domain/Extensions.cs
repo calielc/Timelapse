@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Timelapse.Domain {
+namespace VideoTimeLapse.Domain {
     internal static class Extensions {
         public static Resolution.Fixed Resolve(this Resolution self, ImagesLoader imagesLoader) {
             var resolutionFromFirstFile = imagesLoader.GetResolutionFromFirstFile();

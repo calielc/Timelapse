@@ -5,7 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 
-namespace Timelapse.Domain {
+namespace VideoTimeLapse.Domain {
     [DebuggerDisplay("Folder: {Folder}, Pattern: {Pattern}, Count: {Count}")]
     internal sealed class ImagesLoader {
         private readonly string[] _filenames;

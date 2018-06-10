@@ -1,9 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
 using PowerArgs;
-using Timelapse.Domain;
+using VideoTimeLapse.Domain;
 
-namespace Timelapse {
+namespace VideoTimeLapse {
     class Program {
         static void Main(string[] args) {
             var parsed = Args.Parse<CommandLineArgs>(args);

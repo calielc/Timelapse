@@ -1,6 +1,6 @@
 ﻿using Accord.Video.FFMPEG;
 
-namespace Timelapse.Domain {
+namespace VideoTimeLapse.Domain {
     internal interface ITimelapseBuilderArgs {
         VideoCodec Codec { get; }
         Resolution Resolution { get; }

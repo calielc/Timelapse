@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 
-namespace Timelapse.Domain {
+namespace VideoTimeLapse.Domain {
     public abstract class Resolution {
         [DebuggerDisplay("Width: {Width}")]
         public sealed class WidthFix : Resolution {

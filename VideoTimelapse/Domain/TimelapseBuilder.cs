@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using Accord.Video.FFMPEG;
 
-namespace Timelapse.Domain {
+namespace VideoTimeLapse.Domain {
     internal sealed class TimelapseBuilder : ITimelapseBuilderArgs {
         public TimelapseBuilder() { }
 
@@ -22,7 +21,7 @@ namespace Timelapse.Domain {
             DateTakenDraw = args.DateTakenDraw;
         }
 
-        public VideoCodec Codec { get; set; } = VideoCodec.H264;
+        public VideoCodec Codec { get; set; } = VideoCodec.Default;
         public Resolution Resolution { get; set; }
         public FramesPerSecond FramesPerSecond { get; set; }
 
@@ -49,7 +48,15 @@ namespace Timelapse.Domain {
             var destiny = Path.Combine(DestinyFolder, DestinyFilename);
 
             using (var writer = new VideoFileWriter()) {
-                writer.Open(destiny, resolution.Width, resolution.Height, frameRate, Codec, int.MaxValue, AudioCodec.None, 0, 0, 0);
+                writer.Width = resolution.Width;
+                writer.Height = resolution.Height;
+                writer.FrameRate = frameRate;
+                writer.VideoCodec = Codec;
+                writer.BitRate = int.MaxValue;
+                writer.AudioCodec = AudioCodec.None;
+                writer.AudioBitRate = 0;
+                writer.SampleRate = 0;
+                writer.Open(destiny);
 
                 foreach (var image in imagesLoader.Load(resolution)) {
                     dateTakenDrawer?.Draw(image, image.DateTaken, DateTakenFormat);

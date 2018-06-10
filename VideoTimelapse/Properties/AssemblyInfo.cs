@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Timelapse")]
+[assembly: AssemblyTitle("VideoTimeLapse")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Timelapse")]
+[assembly: AssemblyProduct("VideoTimeLapse")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("dd98b040-90e2-40c4-a4e8-67ffaaa33448")]
+[assembly: Guid("ac201d88-ef73-462b-93bd-b1d207bce76e")]
 
 // Version information for an assembly consists of the following four values:
 //
