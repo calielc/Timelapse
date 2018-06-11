@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
 using Domain;
+using GitTimelapse.App;
 using PowerArgs;
 
 namespace GitTimelapse {
-    public class CommandLineArgs {
+    public class CommandLineArgs : ITimelapseBuilderArgs {
         private string _destinyFolder;
         private string _destinyFilename;
 
@@ -47,7 +48,7 @@ namespace GitTimelapse {
         }
         public string DestinyFilename {
             get {
-                var result = _destinyFilename ?? "video.gif";
+                var result = _destinyFilename ?? "timelapse.gif";
 
                 if (!Path.HasExtension(result)) {
                     result += ".gif";
