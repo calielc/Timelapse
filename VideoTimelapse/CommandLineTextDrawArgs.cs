@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Drawing;
-using VideoTimeLapse.Domain;
+using VideoTimeLapse.App;
 
 namespace VideoTimeLapse {
     public sealed class CommandLineTextDrawArgs : ITextDrawArgs {

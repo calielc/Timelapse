@@ -1,16 +1,12 @@
 ﻿using System;
 using System.IO;
-using Accord.Video.FFMPEG;
 using Domain;
 using PowerArgs;
-using VideoTimeLapse.App;
 
-namespace VideoTimeLapse {
-    public class CommandLineArgs : ITimelapseBuilderArgs {
+namespace GitTimelapse {
+    public class CommandLineArgs {
         private string _destinyFolder;
         private string _destinyFilename;
-
-        public VideoCodec Codec { get; set; } = VideoCodec.Mpeg4;
 
         [ArgRange(1, 120)]
         public double? FrameRate { get; set; }
@@ -51,29 +47,15 @@ namespace VideoTimeLapse {
         }
         public string DestinyFilename {
             get {
-                var result = _destinyFilename ?? "video.mov";
+                var result = _destinyFilename ?? "video.gif";
 
                 if (!Path.HasExtension(result)) {
-                    result += ".mov";
-                }
-
-                if (DestinyFilenameWithLocalTime) {
-                    var name = Path.GetFileNameWithoutExtension(result);
-                    var ext = Path.GetExtension(result);
-                    result = $"{name}-{DateTime.Now:yyyyMMddHHmmss}{ext}";
+                    result += ".gif";
                 }
 
                 return result;
             }
             set => _destinyFilename = value;
         }
-        public bool DestinyFilenameWithLocalTime { get; set; }
-
-        public string DateTakenFormat { get; set; }
-        public CommandLineTextDrawArgs DateTakenDraw { get; set; } = new CommandLineTextDrawArgs();
-        ITextDrawArgs ITimelapseBuilderArgs.DateTakenDraw => DateTakenDraw;
-
-        [ArgReviver]
-        public static CommandLineTextDrawArgs Revive(string key, string val) => CommandLineTextDrawArgs.Parse(val);
     }
 }

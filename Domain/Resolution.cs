@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 
-namespace VideoTimeLapse.Domain {
+namespace Domain {
     public abstract class Resolution {
         [DebuggerDisplay("Width: {Width}")]
         public sealed class WidthFix : Resolution {

@@ -65,22 +65,23 @@
   <ItemGroup>
     <Compile Include="CommandLineArgs.cs" />
     <Compile Include="CommandLineTextDrawArgs.cs" />
-    <Compile Include="Domain\Extensions.cs" />
-    <Compile Include="Domain\FramesPerSecond.cs" />
-    <Compile Include="Domain\ImagesLoader.cs" />
-    <Compile Include="Domain\IResolution.cs" />
-    <Compile Include="Domain\ITextDrawArgs.cs" />
-    <Compile Include="Domain\ITimelapseBuilderArgs.cs" />
-    <Compile Include="Domain\LoadedImage.cs" />
-    <Compile Include="Domain\Resolution.cs" />
-    <Compile Include="Domain\TextDrawer.cs" />
-    <Compile Include="Domain\TimelapseBuilder.cs" />
+    <Compile Include="App\Extensions.cs" />
+    <Compile Include="App\ITextDrawArgs.cs" />
+    <Compile Include="App\ITimelapseBuilderArgs.cs" />
+    <Compile Include="App\TextDrawer.cs" />
+    <Compile Include="App\VideoTimelapse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{2101CA32-E944-430D-9FFE-E03D8E003857}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Accord.3.8.2-alpha\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.2-alpha\build\Accord.targets')" />

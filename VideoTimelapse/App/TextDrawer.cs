@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace VideoTimeLapse.Domain {
+namespace VideoTimeLapse.App {
     public class TextDrawer {
         public Font Font { get; set; }
         public Brush Color { get; set; }

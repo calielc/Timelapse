@@ -1,12 +1,13 @@
 ﻿using System;
 using System.IO;
 using Accord.Video.FFMPEG;
+using Domain;
 
-namespace VideoTimeLapse.Domain {
-    internal sealed class TimelapseBuilder : ITimelapseBuilderArgs {
-        public TimelapseBuilder() { }
+namespace VideoTimeLapse.App {
+    internal sealed class VideoTimelapse : ITimelapseBuilderArgs {
+        public VideoTimelapse() { }
 
-        public TimelapseBuilder(ITimelapseBuilderArgs args) {
+        public VideoTimelapse(ITimelapseBuilderArgs args) {
             Codec = args.Codec;
             Resolution = args.Resolution;
             FramesPerSecond = args.FramesPerSecond;
@@ -21,7 +22,7 @@ namespace VideoTimeLapse.Domain {
             DateTakenDraw = args.DateTakenDraw;
         }
 
-        public VideoCodec Codec { get; set; } = VideoCodec.Default;
+        public VideoCodec Codec { get; set; } = VideoCodec.Mpeg4;
         public Resolution Resolution { get; set; }
         public FramesPerSecond FramesPerSecond { get; set; }
 

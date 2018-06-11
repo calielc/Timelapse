@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace VideoTimeLapse.Domain {
+namespace VideoTimeLapse.App {
     public interface ITextDrawArgs {
         string FontFamily { get; }
         float FontSize { get; }

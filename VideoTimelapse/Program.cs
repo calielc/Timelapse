@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using PowerArgs;
-using VideoTimeLapse.Domain;
+using VideoTimeLapse.App;
 
 namespace VideoTimeLapse {
     class Program {
@@ -11,7 +11,7 @@ namespace VideoTimeLapse {
             Console.WriteLine(JsonConvert.SerializeObject(parsed, Formatting.Indented));
             Console.WriteLine();
 
-            var builder = new TimelapseBuilder(parsed);
+            var builder = new VideoTimelapse(parsed);
             var filename = builder.Build();
 
             Console.WriteLine($"{filename.Name} done!");

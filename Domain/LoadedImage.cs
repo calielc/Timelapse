@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-namespace VideoTimeLapse.Domain {
+namespace Domain {
     public struct LoadedImage : IDisposable {
         private readonly Bitmap _bitmap;
 

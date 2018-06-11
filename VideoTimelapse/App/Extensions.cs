@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using Accord.Math;
+using Domain;
 
-namespace VideoTimeLapse.Domain {
+namespace VideoTimeLapse.App {
     internal static class Extensions {
         public static Resolution.Fixed Resolve(this Resolution self, ImagesLoader imagesLoader) {
             var resolutionFromFirstFile = imagesLoader.GetResolutionFromFirstFile();
@@ -20,14 +22,19 @@ namespace VideoTimeLapse.Domain {
             }
         }
 
-        public static FramesPerSecond.Fixed Resolve(this FramesPerSecond self, ImagesLoader imagesLoader) {
+        public static Rational Resolve(this FramesPerSecond self, ImagesLoader imagesLoader) {
             switch (self) {
-                case null:
-                    return new FramesPerSecond.Fixed(24);
-                case FramesPerSecond.Fixed @fixed:
-                    return @fixed;
-                case FramesPerSecond.DurationFit durationFit:
-                    return durationFit.Resolve(imagesLoader.Count);
+                case null: {
+                        var @fixed = new FramesPerSecond.Fixed(24);
+                        return Rational.FromDouble(@fixed.Value);
+                    }
+                case FramesPerSecond.Fixed @fixed: {
+                        return Rational.FromDouble(@fixed.Value);
+                    }
+                case FramesPerSecond.DurationFit durationFit: {
+                        var @fixed = durationFit.Resolve(imagesLoader.Count);
+                        return Rational.FromDouble(@fixed.Value);
+                    }
                 default:
                     throw new ArgumentOutOfRangeException(nameof(self));
             }

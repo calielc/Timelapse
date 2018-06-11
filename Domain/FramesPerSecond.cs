@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using Accord.Math;
 
-namespace VideoTimeLapse.Domain {
+namespace Domain {
     public abstract class FramesPerSecond {
         [DebuggerDisplay("{Value}fps")]
         public sealed class Fixed : FramesPerSecond {
@@ -13,8 +12,6 @@ namespace VideoTimeLapse.Domain {
             public double Value { get; }
 
             public override string ToString() => $"{Value}fps";
-
-            public static implicit operator Rational(Fixed self) => Rational.FromDouble(self.Value);
         }
 
         [DebuggerDisplay("{Value}")]
