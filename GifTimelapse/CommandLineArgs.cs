@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using Domain;
-using GitTimelapse.App;
+using GifTimelapse.App;
 using PowerArgs;
 
-namespace GitTimelapse {
+namespace GifTimelapse {
     public class CommandLineArgs : ITimelapseBuilderArgs {
         private string _destinyFolder;
         private string _destinyFilename;

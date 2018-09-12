@@ -3,7 +3,7 @@ using System.IO;
 using Domain;
 using ImageMagick;
 
-namespace GitTimelapse.App {
+namespace GifTimelapse.App {
     internal class GifTimelapse {
         public GifTimelapse() { }
 

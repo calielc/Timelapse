@@ -1,7 +1,7 @@
 ﻿using System;
 using Domain;
 
-namespace GitTimelapse.App {
+namespace GifTimelapse.App {
     internal static class Extensions {
         public static TimeSpan Resolve(this FramesPerSecond self, ImagesLoader imagesLoader) {
             switch (self) {

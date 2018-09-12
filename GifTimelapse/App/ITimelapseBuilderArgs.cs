@@ -1,6 +1,6 @@
 ﻿using Domain;
 
-namespace GitTimelapse.App {
+namespace GifTimelapse.App {
     internal interface ITimelapseBuilderArgs {
         Resolution Resolution { get; }
         FramesPerSecond FramesPerSecond { get; }
